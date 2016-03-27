@@ -1,0 +1,46 @@
+物理层：？
+
+数据链路层：
+    以太网 wifi ，广播、arp、交换机
+
+    网络层：
+        IP：
+                向下：通过arp转换为mac地址，反过来是rarp
+                        转化：NAT，子网
+                                路由：routing table，路由算法 RIP/BGP
+                                        扩展：IPv6
+                                                性质：不可靠 无次序
+                                                        补充：ICMP 资讯信息（如ping） 错误信息
+
+                                                        传输层：
+                                                            TCP：
+                                                                    连接：三次握手，四次挥手
+                                                                            次序（流）：ack = sep+1
+                                                                                        滑窗：流量控制，堵塞控制
+                                                                                                重发：
+                                                                                                            超时重发：RTO retransmission timeout（通过RTT 平均往返时间算出）
+                                                                                                                        快速重发：重复ack（在空洞处出现重复）
+                                                                                                                            UDP：无连接，发送的是数据包，顺序不定，不可靠   
+
+                                                                                                                            应用层：
+                                                                                                                                
+                                                                                                                                    HTTP：
+                                                                                                                                            操作：request、response
+                                                                                                                                                    格式：
+                                                                                                                                                                起始行：
+                                                                                                                                                                                requset：
+                                                                                                                                                                                                    方法：get、post、put、delete等
+                                                                                                                                                                                                                        路径
+                                                                                                                                                                                                                                            版本
+                                                                                                                                                                                                                                                            response：
+                                                                                                                                                                                                                                                                                版本
+                                                                                                                                                                                                                                                                                                    状态码：200 ok、3xx重定向、4xx请求错误、5xx6xx服务器错误 
+                                                                                                                                                                                                                                                                                                                头信息： key：value格式
+                                                                                                                                                                                                                                                                                                                            空白：\r\n
+                                                                                                                                                                                                                                                                                                                                        主体：具体的资源
+                                                                                                                                                                                                                                                                                                                                                无状态：
+                                                                                                                                                                                                                                                                                                                                                            cookie：
+                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                            DNS：ip和域名转换 多个服务器，通过索引查找？
+                                                                                                                                                                                                                                                                                                                                                                                其他：smtp、ftp等   
+
